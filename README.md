@@ -8,7 +8,7 @@ https://en.wikipedia.org/wiki/Branch_predictor \
 My code file is: bp.cpp\
 running script: ./run
 
-# CPU cache
+# CPU Cache
 https://en.wikipedia.org/wiki/CPU_cache \
 My code file are: cacheSim.cpp, cache.h\
 running script: ./merge_command_and_run_files
