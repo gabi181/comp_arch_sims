@@ -1,0 +1,41 @@
+#!/bin/bash
+
+echo
+echo "20 Segel test results: only failed tests will be printed"
+echo
+
+
+for (( c=1; c<=20; c++ ))
+do
+	echo "./cacheSim tests/example"$c"_trace " > temp
+	`less tests/example"$c"_command >> temp`
+	`cat temp | tr --delete '\n' > tests/example"$c"_run_file`
+  
+  
+  source tests/example"$c"_run_file > tests/example$c.myout
+  if (( `diff ref_results/example"$c"_output  tests/example$c.myout | wc -l` != 0 )); then
+   # echo -e "\e[0msuccess  $c    -----   "  #`cat tests/test$c.command | head -n 1`
+		
+  #else
+    echo -e "\e[7mfailure  $c              -------\n"     `diff ref_results/example"$c"_output  tests/example$c.myout` "\n"
+    
+  fi
+done
+
+
+#echo
+#echo "960 fb test results: only failed test will be printed"
+#echo
+
+
+#for (( c=0; c<=960; c+=2 ))
+#do
+#
+#  source tests/test$c.command > tests/test$c.myout
+#  if (( `diff tests/test$c.out  tests/test$c.myout | wc -l` != 0 )); then
+#    #echo -e "\e[0msuccess  $c    -----   "  #`cat tests/test$c.command | head -n 1`
+#	
+#    echo -e "\e[7mfailure  $c              -------"     `diff tests/test$c.out  tests/test$c.myout`
+#    
+#  fi
+#done
