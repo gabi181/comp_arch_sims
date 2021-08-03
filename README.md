@@ -10,7 +10,7 @@ running script: ./run
 
 # CPU Cache
 https://en.wikipedia.org/wiki/CPU_cache \
-My code file are: cacheSim.cpp, cache.h\
+My code file are: cache.h, cacheSim.cpp\
 running script: ./merge_command_and_run_files
 
 # Data Dependency
